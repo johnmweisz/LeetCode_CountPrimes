@@ -17,11 +17,12 @@ namespace LeetCode_CountPrimes
     {
         public static int CountPrimes(int n)
         {
+            if (n < 2) return 0;
             var notPrimes = new bool[n + 1];
             var count = 0;
             notPrimes[0] = true;
             notPrimes[1] = true;
-            for (var i = 2; i < notPrimes.Length; i++)
+            for (var i = 2; i < n; i++)
             {
                 if (notPrimes[i]) continue;
                 count++;
